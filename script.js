@@ -2,7 +2,7 @@ const modal = document.getElementById("videoModal");
 const container = document.getElementById("videoContainer");
 const closeBtn = document.querySelector(".close");
 
-document.querySelectorAll(".video-card").forEach(card => {
+document.querySelectorAll(".video-click").forEach(card => {
   card.addEventListener("click", () => {
     const vimeoId = card.dataset.vimeo;
 
@@ -16,6 +16,7 @@ document.querySelectorAll(".video-card").forEach(card => {
     `;
 
     modal.style.display = "flex";
+    document.body.style.overflow = "hidden";
   });
 });
 
@@ -27,4 +28,5 @@ modal.addEventListener("click", e => {
 function closeModal() {
   modal.style.display = "none";
   container.innerHTML = "";
+  document.body.style.overflow = "";
 }
