@@ -4,76 +4,69 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Srujan Kulal — Films & Visual Storyteller</title>
-
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header class="intro">
-    <h1>Srujan</h1>
-    <p>Films & Visual Storyteller</p>
-  </header>
+<header class="intro">
+  <h1>Srujan</h1>
+  <p>Films & Visual Storyteller</p>
+</header>
 
-  <main class="video-grid">
+<main class="video-grid">
 
-    <!-- WIDE VIDEOS (ROW 1) -->
-    <div class="video-card" data-type="wide">
-      <div class="video-click" data-vimeo="1151793986">
-        <img src="assets/thumbnails/video1.jpg" alt="Event Highlights">
-        <h3>Event Highlights</h3>
-      </div>
-    </div>
-
-    <div class="video-card" data-type="wide">
-      <div class="video-click" data-vimeo="1151887511">
-        <img src="assets/thumbnails/video2.jpg" alt="Wedding Highlights">
-        <h3>Wedding Highlights</h3>
-      </div>
-    </div>
-
-    <!-- VERTICAL VIDEOS -->
-    <div class="video-card" data-type="vertical">
-      <div class="video-click" data-vimeo="1151797279">
-        <img src="assets/thumbnails/video3.jpg" alt="Fast Cut Edit">
-        <h3>Fast Cut Edit (Reels)</h3>
-      </div>
-    </div>
-
-    <div class="video-card" data-type="vertical">
-      <div class="video-click" data-youtube="vvrLCvXiBUE">
-        <img src="assets/thumbnails/video4.jpg" alt="Long Form Edit">
-        <h3>Long Form Edit — YouTube</h3>
-      </div>
-    </div>
-
-    <div class="video-card" data-type="vertical">
-      <div class="video-click" data-youtube="RBfPjq5NYC8">
-        <img src="assets/thumbnails/video5.jpg" alt="YouTube Short">
-        <h3>YouTube Short — Fast Cut</h3>
-      </div>
-    </div>
-
-  </main>
-
-  <footer class="contact">
-    <p>
-      Contact:
-      <a href="mailto:srujan605@gmail.com">srujan605@gmail.com</a>
-      &nbsp;•&nbsp;
-      <a href="https://youtube.com/@YOURCHANNEL" target="_blank">YouTube</a>
-      &nbsp;•&nbsp;
-      <a href="https://instagram.com/YOURUSERNAME" target="_blank">Instagram</a>
-    </p>
-  </footer>
-
-  <!-- MODAL -->
-  <div id="videoModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <div id="videoContainer"></div>
+  <div class="video-card wide">
+    <div class="video-click" data-vimeo="1151793986">
+      <img src="assets/thumbnails/video1.jpg">
+      <h3>Event Highlights</h3>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <div class="video-card wide">
+    <div class="video-click" data-vimeo="1151887511">
+      <img src="assets/thumbnails/video2.jpg">
+      <h3>Wedding Highlights</h3>
+    </div>
+  </div>
+
+  <div class="video-card tall">
+    <div class="video-click" data-vimeo="1151797279">
+      <img src="assets/thumbnails/video3.jpg">
+      <h3>Fast Cut Edit (Reels)</h3>
+    </div>
+  </div>
+
+  <div class="video-card tall">
+    <div class="video-click" data-youtube="vvrLCvXiBUE">
+      <img src="assets/thumbnails/video4.jpg">
+      <h3>Long Form Edit — YouTube</h3>
+    </div>
+  </div>
+
+  <div class="video-card tall">
+    <div class="video-click" data-youtube="RBfPjq5NYC8">
+      <img src="assets/thumbnails/video5.jpg">
+      <h3>YouTube Short — Fast Cut</h3>
+    </div>
+  </div>
+
+</main>
+
+<footer class="contact">
+  <p>
+    Contact:
+    <a href="mailto:srujan605@gmail.com">srujan605@gmail.com</a>
+    &nbsp;•&nbsp; YouTube &nbsp;•&nbsp; Instagram
+  </p>
+</footer>
+
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div id="videoContainer"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
