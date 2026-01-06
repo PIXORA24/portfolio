@@ -9,45 +9,42 @@ body {
   color: #fff;
 }
 
+/* Intro */
 .intro {
   padding: 60px 20px 40px;
   text-align: center;
 }
 
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 28px;
-  padding: 20px;
+/* Layout */
+.portfolio {
   max-width: 1100px;
   margin: auto;
-
-  /* THIS FIXES YOUR GAPS */
-  grid-auto-flow: dense;
+  padding: 20px;
 }
 
-/* Card base */
-.video-card {
+.row {
+  display: grid;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+/* Row types */
+.row-wide {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.row-mixed {
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  align-items: start;
+}
+
+.row-center {
   display: flex;
+  justify-content: center;
 }
 
-/* Wide videos */
-.video-card.wide {
-  grid-column: span 2;
-}
-
-.video-card.wide img {
-  aspect-ratio: 16 / 9;
-}
-
-/* Vertical videos */
-.video-card.tall img {
-  aspect-ratio: 9 / 16;
-}
-
-/* Clickable content */
+/* Cards */
 .video-click {
-  width: 100%;
   cursor: pointer;
   text-align: center;
 }
@@ -58,6 +55,16 @@ body {
   object-fit: cover;
 }
 
+/* Aspect ratios */
+.row-wide img {
+  aspect-ratio: 16 / 9;
+}
+
+.tall img {
+  aspect-ratio: 9 / 16;
+}
+
+/* Titles */
 .video-click h3 {
   margin-top: 10px;
   font-size: 0.95rem;
@@ -66,9 +73,20 @@ body {
 
 /* Mobile */
 @media (max-width: 768px) {
-  .video-card.wide {
-    grid-column: span 1;
+  .row-wide,
+  .row-mixed {
+    grid-template-columns: 1fr;
   }
 }
 
-/* Modal & footer remain same */
+/* Footer */
+.contact {
+  text-align: center;
+  padding: 40px 20px;
+  opacity: 0.7;
+}
+
+.contact a {
+  color: #fff;
+  text-decoration: none;
+}
