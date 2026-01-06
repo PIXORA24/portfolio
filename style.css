@@ -42,6 +42,7 @@ body {
 .video-click {
   cursor: pointer;
   width: 100%;
+  text-align: center; /* THIS fixes the heading alignment */
 }
 
 .video-click img {
