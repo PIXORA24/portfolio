@@ -1,93 +1,30 @@
-* {
-  box-sizing: border-box;
-}
+const modal = document.getElementById("videoModal");
+const container = document.getElementById("videoContainer");
+const closeBtn = document.querySelector(".close");
 
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  background: radial-gradient(circle at top, #111 0%, #000 70%);
-  color: #fff;
-}
+document.querySelectorAll(".video-card").forEach(card => {
+  card.addEventListener("click", () => {
+    const vimeoId = card.dataset.vimeo;
 
-.intro {
-  padding: 60px 20px 40px;
-  text-align: center;
-}
+    container.innerHTML = `
+      <iframe 
+        src="https://player.vimeo.com/video/${vimeoId}?autoplay=1"
+        frameborder="0"
+        allow="autoplay; fullscreen"
+        allowfullscreen>
+      </iframe>
+    `;
 
-.intro h1 {
-  margin: 0;
-  font-size: 2.4rem;
-  letter-spacing: 0.5px;
-}
+    modal.style.display = "flex";
+  });
+});
 
-.intro p {
-  margin-top: 8px;
-  opacity: 0.7;
-}
+closeBtn.addEventListener("click", closeModal);
+modal.addEventListener("click", e => {
+  if (e.target === modal) closeModal();
+});
 
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
-  padding: 20px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.video-card {
-  cursor: pointer;
-}
-
-.video-card img {
-  width: 100%;
-  border-radius: 14px;
-  display: block;
-}
-
-.video-card h3 {
-  margin-top: 10px;
-  font-size: 0.95rem;
-  opacity: 0.85;
-}
-
-/* Modal */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.modal-content {
-  width: 90%;
-  max-width: 900px;
-  position: relative;
-}
-
-.close {
-  position: absolute;
-  top: -36px;
-  right: 0;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-#videoContainer iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 12px;
-}
-
-.contact {
-  text-align: center;
-  padding: 40px 20px;
-  opacity: 0.7;
-}
-
-.contact a {
-  color: #fff;
-  text-decoration: none;
+function closeModal() {
+  modal.style.display = "none";
+  container.innerHTML = "";
 }
