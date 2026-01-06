@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: radial-gradient(circle at top, #111 0%, #000 70%);
+  color: #fff;
+}
+
+.intro {
+  padding: 60px 20px 40px;
+  text-align: center;
+}
+
+.intro h1 {
+  margin: 0;
+  font-size: 2.4rem;
+  letter-spacing: 0.5px;
+}
+
+.intro p {
+  margin-top: 8px;
+  opacity: 0.7;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  padding: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.video-card {
+  cursor: pointer;
+}
+
+.video-card img {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+}
+
+.video-card h3 {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 900px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: -36px;
+  right: 0;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+#videoContainer iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+}
+
+.contact {
+  text-align: center;
+  padding: 40px 20px;
+  opacity: 0.7;
+}
+
+.contact a {
+  color: #fff;
+  text-decoration: none;
+}
