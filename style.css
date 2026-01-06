@@ -9,6 +9,7 @@ body {
   color: #fff;
 }
 
+/* INTRO */
 .intro {
   padding: 60px 20px 40px;
   text-align: center;
@@ -25,35 +26,25 @@ body {
   opacity: 0.7;
 }
 
-/* ===== WIDE GRID (ROW 1) ===== */
-.wide-grid {
+/* GRID */
+.video-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(280px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
   padding: 20px;
   max-width: 1100px;
   margin: auto;
-  margin-bottom: 40px;
 }
 
-/* ===== VERTICAL GRID (ROW 2 & 3) ===== */
-.vertical-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 28px;
-  padding: 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
+/* CARDS */
 .video-card {
   display: flex;
   justify-content: center;
 }
 
 .video-click {
-  cursor: pointer;
   width: 100%;
+  cursor: pointer;
   text-align: center;
 }
 
@@ -64,22 +55,30 @@ body {
   object-fit: cover;
 }
 
-/* Aspect ratios */
-.wide-grid img {
+/* ASPECT RATIOS */
+.video-card[data-type="wide"] img {
   aspect-ratio: 16 / 9;
 }
 
-.vertical-grid img {
+.video-card[data-type="vertical"] img {
   aspect-ratio: 9 / 16;
 }
 
+/* TITLES */
 .video-click h3 {
   margin-top: 10px;
   font-size: 0.95rem;
   opacity: 0.85;
 }
 
-/* ===== MODAL ===== */
+/* MOBILE */
+@media (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* MODAL */
 .modal {
   display: none;
   position: fixed;
@@ -110,7 +109,7 @@ body {
   border-radius: 12px;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 .contact {
   text-align: center;
   padding: 40px 20px;
