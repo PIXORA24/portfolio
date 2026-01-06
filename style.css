@@ -15,35 +15,42 @@ body {
   text-align: center;
 }
 
-/* Layout */
-.portfolio {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
+.intro h1 {
+  margin: 0;
+  font-size: 2.4rem;
 }
 
-.row {
+.intro p {
+  margin-top: 8px;
+  opacity: 0.7;
+}
+
+/* Grid */
+.video-grid {
   display: grid;
-  gap: 32px;
-  margin-bottom: 48px;
-}
-
-/* Row types */
-.row-wide {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.row-mixed {
-  grid-template-columns: repeat(2, minmax(260px, 1fr));
-  align-items: start;
-}
-
-.row-center {
-  display: flex;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 36px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 /* Cards */
+.video-card {
+  margin: auto;
+  width: 100%;
+}
+
+/* Size caps (THIS FIXES DESKTOP ISSUE) */
+.video-card.wide {
+  max-width: 520px;
+}
+
+.video-card.tall {
+  max-width: 320px;
+}
+
+/* Clickable */
 .video-click {
   cursor: pointer;
   text-align: center;
@@ -56,11 +63,11 @@ body {
 }
 
 /* Aspect ratios */
-.row-wide img {
+.video-card.wide img {
   aspect-ratio: 16 / 9;
 }
 
-.tall img {
+.video-card.tall img {
   aspect-ratio: 9 / 16;
 }
 
@@ -73,10 +80,41 @@ body {
 
 /* Mobile */
 @media (max-width: 768px) {
-  .row-wide,
-  .row-mixed {
-    grid-template-columns: 1fr;
+  .video-card.wide,
+  .video-card.tall {
+    max-width: 100%;
   }
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 900px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: -36px;
+  right: 0;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+#videoContainer iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
 }
 
 /* Footer */
