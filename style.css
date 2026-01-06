@@ -35,16 +35,22 @@ body {
 }
 
 .video-card {
-  cursor: pointer;
+  display: flex;
+  justify-content: center;
 }
 
-.video-card img {
+.video-click {
+  cursor: pointer;
+  width: 100%;
+}
+
+.video-click img {
   width: 100%;
   border-radius: 14px;
   display: block;
 }
 
-.video-card h3 {
+.video-click h3 {
   margin-top: 10px;
   font-size: 0.95rem;
   opacity: 0.85;
